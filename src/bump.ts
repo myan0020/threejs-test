@@ -209,6 +209,11 @@ function findIntersection(bumpingRect: BumpingRect, bumpedRect: BumpedRect): Rec
   };
 }
 
+function localToLocal(fromVector: Vector3, fromLocalObject3D: Object3D, toLocalObject3D: Object3D) {
+  const fromWorldVector = fromLocalObject3D.localToWorld(fromVector);
+  return toLocalObject3D.worldToLocal(fromWorldVector);
+}
+
 // *** // ** // *** // ** // *** // ** // *** // ** // *** // ** // *** // ** // *** // ** // *** // ** // *** // ** // *** //
 
 
